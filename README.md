@@ -1,40 +1,56 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# REACT-Template
+# Project Name
 
-> Starter template with linters and bable setup for react projects
+> Description the project.
 
 
-# Note:
-this is a usage guide, remove it once you install all requirements
+## Built With
 
+- Major languages
+- Frameworks
+- Technologies used
+
+## Live Demo (if available)
+
+[Live Demo Link](https://livedemo.com)
+
+
+## Getting Started
+
+**This is an example of how you may give instructions on setting up your project locally.**
+**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-- git
-- npm
 
 ### Setup
-- clone this temp with `git clone https://github.com/yosefHesham/react-temp`
 
 ### Install
-- run `npm install` to install dev dependencies
 
 ### Usage
-- run `npm start` to run server.
-- run `npm run build` to prepare for deployment
 
+### Run tests
+
+### Deployment
 
 
 
 ## Authors
 
-👤 **Yousef Hesham**
+👤 **Author1**
 
-- GitHub: [@yosefHesham](https://github.com/yosefHesham)
-- Twitter: [@yousef](https://twitter.com/Yousef45653478)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yousef-hesham-b132ba179/)
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Author2**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
