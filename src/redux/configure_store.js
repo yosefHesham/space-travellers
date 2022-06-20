@@ -9,3 +9,4 @@ const mainReducer = combineReducers({
 })
 
 const store = createStore(mainReducer,applyMiddleware(thunk))
+export default store
