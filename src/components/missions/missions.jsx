@@ -1,8 +1,8 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loadMissionsAsync } from "../../redux/missions/missions";
-import Mission from "./mission";
-import styles from "./mission.module.css";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadMissionsAsync } from '../../redux/missions/missions';
+import Mission from './mission';
+import styles from './mission.module.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions);
@@ -11,7 +11,6 @@ const Missions = () => {
   React.useEffect(() => {
     dispatch(loadMissionsAsync);
   }, []);
-  console.log(missions);
   return (
     <section className={styles.missions}>
       <div className={styles.mission}>
@@ -23,11 +22,11 @@ const Missions = () => {
       {missions.map((mission) => (
         <Mission
           key={mission.mission_id}
-          mission_name={mission.mission_name}
+          name={mission.mission_name}
           description={mission.description}
           reserved={mission.reserved}
           id={mission.mission_id}
-          style={{ backgroundColor: "black" }}
+
         />
       ))}
     </section>

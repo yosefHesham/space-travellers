@@ -14,8 +14,8 @@
 .right_border {
   border-right: 1px solid black;
   box-sizing:border-box;
-padding: 10px;
-height: 100%
+  padding: 10px;
+  height: 100%
 
 }
 

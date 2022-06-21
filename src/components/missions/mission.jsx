@@ -1,31 +1,61 @@
-import React from "react";
-import styles from "./mission.module.css";
+import PropTypes from 'prop-types';
+import React from 'react';
+import styles from './mission.module.css';
 
 const Mission = (props) => {
-  const { mission_id, mission_name, description, reserved } = props;
-
-
+  const {
+    name, description, reserved,
+  } = props;
 
   return (
     <div className={styles.mission}>
-      <p className={styles.right_border}>{mission_name}</p>
-      <p className={styles.right_border}> {description}</p>
+      <p className={styles.right_border}>{name}</p>
+      <p className={styles.right_border}>
+        {' '}
+        {description}
+      </p>
       {reserved ? (
         <>
-          {" "}
-          <p className={styles.right_border} style={{alignSelf:"center", textAlign:"center"}}>Active Member</p>{" "}
-          <button  style={{padding:"5px"}}>Cancel</button>{" "}
+          {' '}
+          <p
+            className={styles.right_border}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            Active Member
+          </p>
+          {' '}
+          <button type="button" style={{ padding: '5px' }}>Cancel</button>
+          {' '}
         </>
       ) : (
         <>
-          {" "}
-          <p className={styles.right_border} style={{alignSelf:"center"}} >NOT A MEMBER</p>{" "}
-          <button   className="action-button">Join</button>
+          {' '}
+          <p
+            className={styles.right_border}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            NOT A MEMBER
+          </p>
+          {' '}
+          <button type="button" className="action-button">Join</button>
         </>
       )}
-        </div>
-
+    </div>
   );
+};
+
+Mission.propTypes = {
+  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Mission;
