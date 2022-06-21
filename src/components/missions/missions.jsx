@@ -1,6 +1,8 @@
-import React from "react"
+import React from 'react';
 
-const Missions = () => {
-  return (<p>Missons</p>)
+function Missions() {
+  return (
+    <p>Missions</p>
+  );
 }
-export default Missions
+export default Missions;
