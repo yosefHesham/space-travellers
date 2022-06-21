@@ -1,20 +1,36 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { loadMissionsAsync } from "../../redux/missions/missions"
-
-let firstFetch = false;
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loadMissionsAsync } from "../../redux/missions/missions";
+import Mission from "./mission";
+import styles from "./mission.module.css";
 
 const Missions = () => {
-  const dispatch = useDispatch()
+  const missions = useSelector((state) => state.missions);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
-    if(!firstFetch) {
-    dispatch(loadMissionsAsync)
-    }
-    firstFetch = true;
-  },[])
-  const missions = useSelector((state) => state.missions);
-  console.log(missions)
-  return (<p>Missons</p>)
-}
-export default Missions
+    dispatch(loadMissionsAsync);
+  }, []);
+  console.log(missions);
+  return (
+    <section className={styles.missions}>
+      <div className={styles.mission}>
+        <p className={styles.right_border}>Mission</p>
+        <p className={styles.right_border}>Description</p>
+        <p className={styles.right_border}>Status</p>
+        <p> </p>
+      </div>
+      {missions.map((mission) => (
+        <Mission
+          key={mission.mission_id}
+          mission_name={mission.mission_name}
+          description={mission.description}
+          reserved={mission.reserved}
+          id={mission.mission_id}
+          style={{ backgroundColor: "black" }}
+        />
+      ))}
+    </section>
+  );
+};
+export default Missions;
