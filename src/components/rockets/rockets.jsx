@@ -10,45 +10,53 @@ function Rockets() {
     dispatch(getRockets());
   }, []);
 
-  const rocketContainerStyle = () => (
-    {
-      display: 'flex',
-      flexDirection: 'column',
-      height: '100vh',
-      padding: '100px 20px',
-    }
-  );
-
   return (
-    <div className={{ rocketContainerStyle }}>
+    <div className="rocketContainer" style={{ width: '100%', padding: '0px' }}>
       {rockets.map((rocket) => (
         <li
-          key={rocket.id}
+          key={rocket.rocket_id}
           style={{
-            width: '95%', height: '22%', gap: '20px', margin: ' 50px auto', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+            gap: '10px',
+            margin: ' 50px 0px',
+            padding: '0px',
+            listStyle: 'none',
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
-          <img src={rocket.flickr_images} alt={rocket.name} style={{ width: '22%' }} />
+          <img src={rocket.flickr_images} alt={rocket.name} style={{ width: '30%', objectFit: 'cover' }} />
           <div
             className="rocket_name_description"
             style={{
-              height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              maxHeight: '100%',
+              minHeight: '200px',
+              height: '100%',
+              padding: '10px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              backdropFilter: 'blur(20px)',
+              backgroundColor: '#E4E4E488',
+              borderRadius: '2px',
             }}
           >
-            <h3>{rocket.name}</h3>
-            <p>{rocket.description}</p>
+            <h3 style={{ padding: '0' }}>{rocket.rocket_name}</h3>
+            <p style={{ padding: '0' }}>{rocket.description}</p>
             <button
               type="submit"
               onClick={() => dispatch(reserveRocket(rocket.id))}
               style={{
+                width: '190px',
+                height: '50px',
                 background: '#1332CD',
+                textAlign: 'center',
                 color: '#FFFFFF',
+                fontWeight: 'bold',
+                fontSize: '1rem',
                 border: 'none',
                 outline: 'none',
-                textAlign: 'center',
-                width: '150px',
-                height: '40px',
                 borderRadius: '2px',
+                cursor: 'pointer',
               }}
             >
               Reserve Rocket

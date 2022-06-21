@@ -17,19 +17,35 @@ function Navbar() {
   return (
     <header
       className="d-flex"
-      style={{ width: '100%', height: '15%', display: 'flex' }}
+      style={{
+        height: '15%',
+        padding: '20px 0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderBottom: '1px solid #7A7A7A',
+        position: 'sticky',
+        top: '0',
+        zIndex: '999999',
+        backdropFilter: 'blur(20px)',
+      }}
     >
-      <article className="logo d-flex" style={{ display: 'flex' }}>
+      <div
+        className="logo d-flex"
+        style={{
+          padding: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        }}
+      >
         <img
           src={logo}
           style={{ width: '60px', height: '60px' }}
           alt="logo"
         />
         <h1>Space Travelers Hub</h1>
-      </article>
+      </div>
       <ul className="d-flex">
         {navLinks.map((link) => (
-          <NavLink key={link.id} to={link.path}>
+          <NavLink key={link.id} to={link.path} style={{ textDecoration: 'none', color: '#1332CD' }}>
             {' '}
             {link.text}
           </NavLink>
