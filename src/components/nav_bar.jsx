@@ -45,7 +45,7 @@ function Navbar() {
       </div>
       <ul className="d-flex">
         {navLinks.map((link) => (
-          <NavLink key={link.id} to={link.path} style={{ textDecoration: 'none', color: '#1332CD' }}>
+          <NavLink key={link.id} to={link.path} style={{ textDecoration: 'none', fontWeight: 'bold', color: '#135DCD' }}>
             {' '}
             {link.text}
           </NavLink>
