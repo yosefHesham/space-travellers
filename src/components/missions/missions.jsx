@@ -1,8 +1,8 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loadMissionsAsync } from "../../redux/missions/missions";
-import Mission from "./mission";
-import styles from "./mission.module.css";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadMissionsAsync } from '../../redux/missions/missions';
+import Mission from './mission';
+import styles from './mission.module.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions);
@@ -22,7 +22,7 @@ const Missions = () => {
       </div>
 
       {missions.map((mission) => {
-        i ++;
+        i += 1;
         return (
           <Mission
             key={mission.mission_id}
@@ -30,7 +30,7 @@ const Missions = () => {
             description={mission.description}
             reserved={mission.reserved}
             id={mission.mission_id}
-            bgColor={(i % 2 ? "white" : "lightgrey")}
+            bgColor={(i % 2 ? 'white' : 'lightgrey')}
           />
         );
       })}
