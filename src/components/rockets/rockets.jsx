@@ -14,7 +14,7 @@ function Rockets() {
     <div className="rocketContainer" style={{ width: '100%', padding: '0px' }}>
       {rockets.map((rocket) => (
         <li
-          key={rocket.rocket_id}
+          key={rocket.id}
           style={{
             gap: '10px',
             margin: ' 50px 0px',
@@ -24,7 +24,7 @@ function Rockets() {
             justifyContent: 'space-between',
           }}
         >
-          <img src={rocket.flickr_images} alt={rocket.name} style={{ width: '30%', objectFit: 'cover' }} />
+          <img src={rocket.flickr_images} alt={rocket.rocket_name} style={{ width: '30%', objectFit: 'cover' }} />
           <div
             className="rocket_name_description"
             style={{
@@ -41,7 +41,9 @@ function Rockets() {
             }}
           >
             <h3 style={{ padding: '0' }}>{rocket.rocket_name}</h3>
-            <p style={{ padding: '0' }}>{rocket.description}</p>
+            <span style={{ padding: '0' }}>
+              <p>{rocket.description}</p>
+            </span>
             <button
               type="submit"
               onClick={() => dispatch(reserveRocket(rocket.id))}
