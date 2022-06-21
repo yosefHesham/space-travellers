@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRockets } from '../../redux/rockets/rockets';
 import ButtonRocketBadge from './ButtonRocketBadge';
 
-function Rockets({ id, reserved }) {
+function Rockets() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
 
@@ -45,7 +44,7 @@ function Rockets({ id, reserved }) {
             <h2 style={{ padding: '0' }}>{rocket.rocket_name}</h2>
             <span style={{ padding: '0' }}>
               {
-                reserved ? (
+                rocket.reserved ? (
                   <p>
                     <span>
                       reserved
@@ -56,7 +55,7 @@ function Rockets({ id, reserved }) {
                 )
               }
               <span>
-                <ButtonRocketBadge id={id} reserved={reserved} />
+                <ButtonRocketBadge id={rocket.rocket_id} reserved={rocket.reserved} />
               </span>
             </span>
           </div>
@@ -66,8 +65,8 @@ function Rockets({ id, reserved }) {
   );
 }
 
-Rockets.propTypes = {
-  id: PropTypes.number.isRequired,
-  reserved: PropTypes.bool.isRequired,
-};
+// Rockets.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   reserved: PropTypes.bool.isRequired,
+// };
 export default Rockets;

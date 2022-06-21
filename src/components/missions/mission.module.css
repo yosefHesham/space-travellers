@@ -1,0 +1,20 @@
+.missions {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+}
+
+.mission {
+  display: grid;
+  grid-template-columns: 10% 55% 15% 20%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.right_border {
+  border-right: 1px solid black;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 100%;
+}
