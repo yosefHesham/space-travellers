@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { reserveRocket } from '../../services/rockets';
+import { reserveRocket, getRockets } from '../../services/rockets';
 
 function Rockets() {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
 
   useEffect(() => {
-    dispatch(reserveRocket());
+    dispatch(getRockets());
   }, []);
 
   const rocketContainerStyle = () => (
