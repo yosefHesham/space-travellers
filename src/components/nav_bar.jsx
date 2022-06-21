@@ -25,7 +25,7 @@ function Navbar() {
           style={{ width: '60px', height: '60px' }}
           alt="logo"
         />
-        <h1>Space Travelers` Hub</h1>
+        <h1>Space Travelers Hub</h1>
       </article>
       <ul className="d-flex">
         {navLinks.map((link) => (
