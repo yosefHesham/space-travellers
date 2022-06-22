@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import styles from "./mission.module.css";
 const StatusBadge = (props) => {
@@ -15,4 +16,9 @@ const StatusBadge = (props) => {
     </div>
   );
 };
+
+StatusBadge.propTypes = {
+  bgColor: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
+}
 export default StatusBadge;

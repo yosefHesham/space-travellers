@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import { useDispatch } from "react-redux";
 import { changeMissionStats } from "../../redux/missions/missions";
@@ -37,4 +38,10 @@ const ChangeStatus = (props) => {
     </div>
   );
 };
+
+ChangeStatus.propTypes = {
+  color: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
+}
 export default ChangeStatus;
