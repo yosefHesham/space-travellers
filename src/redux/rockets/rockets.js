@@ -11,7 +11,6 @@ export const getRockets = () => async (dispatch) => {
     .then((rockets) => rockets.json())
     .then(
       (data) => dispatch({ type: GET_ROCKETS, payload: data }),
-      () => dispatch(Error('Error fetching rockets')),
     );
 };
 
