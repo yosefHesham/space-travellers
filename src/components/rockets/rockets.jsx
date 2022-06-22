@@ -25,7 +25,14 @@ function Rockets({ id, reserved }) {
             display: 'flex',
           }}
         >
-          <img src={rocket.flickr_images} alt={rocket.rocket_name} style={{ width: '25%', objectFit: 'cover' }} />
+          <img
+            src={rocket.flickr_images}
+            alt={rocket.rocket_name}
+            style={{
+              width: '25%',
+              objectFit: 'cover',
+            }}
+          />
           <div
             className="rocket_name_description"
             style={{
