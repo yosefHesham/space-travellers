@@ -1,38 +1,35 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './mission.module.css';
-import StatusBadge from './status_badge';
+import PropTypes from "prop-types";
+import React from "react";
+import ChangeStatus from "./change_status";
+import styles from "./mission.module.css";
+import StatusBadge from "./status_badge";
 
 const Mission = (props) => {
-  const {
-    name, description, reserved, bgColor,
-  } = props;
+  const { name, description, reserved, bgColor } = props;
 
   return (
     <div className={styles.mission} style={{ backgroundColor: bgColor }}>
       <p className={styles.right_border}>{name}</p>
-      <p className={styles.right_border}>
-        {' '}
-        {description}
-      </p>
+      <p className={styles.right_border}> {description}</p>
       {reserved ? (
         <>
-          {' '}
-          <StatusBadge text={"Active Member"} bgColor={'blue'} />
-          {' '}
-          <button type="button" style={{ padding: '5px' }}>
-            Cancel
-          </button>
-          {' '}
+          {" "}
+          <StatusBadge text={"Active Member"} bgColor={"blue"} />{" "}
+          <ChangeStatus
+            text={"Leave Mission"}
+            color={"red"}
+            handleStatus={() => {}}
+          ></ChangeStatus>{" "}
         </>
       ) : (
         <>
-          {' '}
-          <StatusBadge text={"NOT A MEMBER"} bgColor={'gray'} />
-          {' '}
-          <button type="button" className="action-button">
-            Join
-          </button>
+          {" "}
+          <StatusBadge text={"NOT A MEMBER"} bgColor={"gray"} />{" "}
+          <ChangeStatus
+            text={"Join Mission"}
+            color={"rgba(0,0,0,.7)"}
+            handleStatus={() => {}}
+          ></ChangeStatus>{" "}
         </>
       )}
     </div>
