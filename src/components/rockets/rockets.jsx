@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRockets } from '../../redux/rockets/rockets';
 import ButtonRocketBadge from './ButtonRocketBadge';
 
-function Rockets() {
+function Rockets({ id, reserved }) {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
 
@@ -24,7 +25,14 @@ function Rockets() {
             display: 'flex',
           }}
         >
-          <img src={rocket.flickr_images} alt={rocket.rocket_name} style={{ width: '25%', objectFit: 'cover' }} />
+          <img
+            src={rocket.flickr_images}
+            alt={rocket.rocket_name}
+            style={{
+              width: '25%',
+              objectFit: 'cover',
+            }}
+          />
           <div
             className="rocket_name_description"
             style={{
@@ -42,20 +50,26 @@ function Rockets() {
             }}
           >
             <h2 style={{ padding: '0' }}>{rocket.rocket_name}</h2>
-            <span style={{ padding: '0' }}>
+            <span style={{
+              height: '150px',
+              padding: '0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+            >
               {
-                rocket.reserved ? (
-                  <p>
-                    <span>
-                      reserved
-                    </span>
-                  </p>
+                reserved ? (
+                  <span>
+                    <p>reserved</p>
+                    {rocket.description}
+                  </span>
                 ) : (
-                  <p>{rocket.description}</p>
+                  <p style={{ margin: '0' }}>{rocket.description}</p>
                 )
               }
-              <span>
-                <ButtonRocketBadge id={rocket.rocket_id} reserved={rocket.reserved} />
+              <span className="buttonBadgeContainer" style={{ padding: '0' }}>
+                <ButtonRocketBadge id={id} reserved={reserved} />
               </span>
             </span>
           </div>
@@ -65,8 +79,8 @@ function Rockets() {
   );
 }
 
-// Rockets.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   reserved: PropTypes.bool.isRequired,
-// };
+Rockets.propTypes = {
+  id: PropTypes.number.isRequired,
+  reserved: PropTypes.bool.isRequired,
+};
 export default Rockets;

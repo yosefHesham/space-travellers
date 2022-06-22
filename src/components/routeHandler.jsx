@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Missions from './missions/missions';
@@ -16,5 +18,4 @@ const RouteHandler = () => (
     </Routes>
   </Router>
 );
-
 export default RouteHandler;

@@ -11,18 +11,17 @@ export const getRockets = () => async (dispatch) => {
     .then((rockets) => rockets.json())
     .then(
       (data) => dispatch({ type: GET_ROCKETS, payload: data }),
-      () => dispatch({ type: GET_ROCKETS, payload: [] }),
     );
 };
 
-export const reserveRocket = (id) => async (dispatch) => {
+export const reserveRocket = (id) => (dispatch) => {
   dispatch({
     type: RESERVE_ROCKET,
     payload: id,
   });
 };
 
-export const unreserveRocket = (id) => async (dispatch) => {
+export const unreserveRocket = (id) => (dispatch) => {
   dispatch({
     type: UNRESERVE_ROCKET,
     payload: id,

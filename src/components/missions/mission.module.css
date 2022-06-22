@@ -1,10 +1,12 @@
 .missions {
   margin: 0 auto;
   width: 90%;
+  display: -ms-grid;
   display: grid;
 }
 
 .mission {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 10% 55% 15% 20%;
   border-top: 1px solid black;

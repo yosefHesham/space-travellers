@@ -19,7 +19,26 @@ export default function ButtonRocketBadge({ id, reserved }) {
   return reserved ? (
     <button type="submit" className="unreservedButton" onClick={handleUnreserved} id={id}>Cancel Reservation</button>
   ) : (
-    <button type="submit" className="reserveButton" onClick={handleReserve} id={id}>Reserve Rocket</button>
+    <button
+      type="button"
+      className="reserveButton"
+      style={{
+        height: '40px',
+        border: 'none',
+        outline: 'none',
+        color: '#FFF',
+        fontSize: '1rem',
+        fontWeight: 'bold',
+        backgroundColor: '#0D53C3',
+        cursor: 'pointer',
+        borderRadius: '2px',
+      }}
+      onClick={handleReserve}
+      id={id}
+    >
+      Reserve Rocket
+    </button>
+
   );
 }
 
