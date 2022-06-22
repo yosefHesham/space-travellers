@@ -13,28 +13,45 @@ const navLinks = [
   { path: '/profile', id: 3, text: 'Profile' },
 ];
 
-const Navbar = () => (
-  <header
-    className="d-flex"
-    style={{ width: '100%', height: '15%', display: 'flex' }}
-  >
-    <article className="logo d-flex" style={{ display: 'flex' }}>
-      <img
-        src={logo}
-        style={{ width: '60px', height: '60px' }}
-        alt="logo"
-      />
-      <h1>Space Travelers` Hub</h1>
-    </article>
-    <ul className="d-flex">
-      {navLinks.map((link) => (
-        <NavLink key={link.id} to={link.path}>
-          {' '}
-          {link.text}
-        </NavLink>
-      ))}
-    </ul>
-  </header>
-);
-
+function Navbar() {
+  return (
+    <header
+      className="d-flex"
+      style={{
+        height: '15%',
+        padding: '20px 0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderBottom: '1px solid #7A7A7A',
+        position: 'sticky',
+        top: '0',
+        zIndex: '999999',
+        backdropFilter: 'blur(20px)',
+      }}
+    >
+      <div
+        className="logo d-flex"
+        style={{
+          padding: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        }}
+      >
+        <img
+          src={logo}
+          style={{ width: '60px', height: '60px' }}
+          alt="logo"
+        />
+        <h1>Space Travelers&apos; Hub</h1>
+      </div>
+      <ul className="d-flex">
+        {navLinks.map((link) => (
+          <NavLink key={link.id} to={link.path} style={{ textDecoration: 'none', fontWeight: 'bold', color: '#135DCD' }}>
+            {' '}
+            {link.text}
+          </NavLink>
+        ))}
+      </ul>
+    </header>
+  );
+}
 export default Navbar;
