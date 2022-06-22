@@ -5,7 +5,7 @@ import rocketsReducer from './rockets/rockets';
 
 const mainReducer = combineReducers({
   missions: missionsReducer,
-  rockets:rocketsReducer
+  rockets: rocketsReducer,
 });
 
 const store = createStore(mainReducer, applyMiddleware(thunk));

@@ -11,11 +11,10 @@ const loadMissions = (missions) => ({
   missions,
 });
 
- export const changeMissionStats = (missionId) => ({
+export const changeMissionStats = (missionId) => ({
   type: CHANGE_MISSION_STATUS,
   payLoad: missionId,
 });
-
 
 export const loadMissionsAsync = async (dispatch, getState) => {
   const currentMissions = getState().missions;
@@ -34,14 +33,12 @@ export default function missionsReducer(state = [], action) {
     case LOAD_MISSONS:
       return action.missions;
     case CHANGE_MISSION_STATUS:
-      console.log(action.payLoad);
-      const newMissions = state.map(mission => {
-        if(mission.mission_id == action.payLoad) {
-          return {...mission, reserved:!mission.reserved}
+      return state.map((mission) => {
+        if (mission.mission_id === action.payLoad) {
+          return { ...mission, reserved: !mission.reserved };
         }
         return mission;
-      })
-      return newMissions;
+      });
     default:
       return state;
   }
