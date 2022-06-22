@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './mission.module.css';
+import StatusBadge from './status_badge';
 
 const Mission = (props) => {
   const {
@@ -17,16 +18,7 @@ const Mission = (props) => {
       {reserved ? (
         <>
           {' '}
-          <p
-            className={styles.right_border}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            Active Member
-          </p>
+          <StatusBadge text={"Active Member"} bgColor={'blue'} />
           {' '}
           <button type="button" style={{ padding: '5px' }}>
             Cancel
@@ -36,16 +28,7 @@ const Mission = (props) => {
       ) : (
         <>
           {' '}
-          <p
-            className={styles.right_border}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            NOT A MEMBER
-          </p>
+          <StatusBadge text={"NOT A MEMBER"} bgColor={'gray'} />
           {' '}
           <button type="button" className="action-button">
             Join
