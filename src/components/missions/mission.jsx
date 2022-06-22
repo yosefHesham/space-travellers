@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ChangeStatus from './change_status';
 import styles from './mission.module.css';
+import StatusBadge from './status_badge';
 
 const Mission = (props) => {
   const {
-    name, description, reserved, bgColor,
+    id, name, description, reserved, bgColor,
   } = props;
 
   return (
@@ -17,39 +19,26 @@ const Mission = (props) => {
       {reserved ? (
         <>
           {' '}
-          <p
-            className={styles.right_border}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            Active Member
-          </p>
+          <StatusBadge text="Active Member" bgColor="blue" />
           {' '}
-          <button type="button" style={{ padding: '5px' }}>
-            Cancel
-          </button>
+          <ChangeStatus
+            text="Leave Mission"
+            color="red"
+            id={id}
+          />
           {' '}
         </>
       ) : (
         <>
           {' '}
-          <p
-            className={styles.right_border}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            NOT A MEMBER
-          </p>
+          <StatusBadge text="NOT A MEMBER" bgColor="gray" />
           {' '}
-          <button type="button" className="action-button">
-            Join
-          </button>
+          <ChangeStatus
+            text="Join Mission"
+            color="rgba(0,0,0,.7)"
+            id={id}
+          />
+          {' '}
         </>
       )}
     </div>
@@ -60,7 +49,7 @@ Mission.propTypes = {
   description: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
-
+  id: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
 };
 

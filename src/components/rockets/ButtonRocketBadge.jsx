@@ -17,7 +17,7 @@ export default function ButtonRocketBadge({ id, reserved }) {
   };
 
   return reserved ? (
-    <button type="button" className="unreservedButton" onClick={handleUnreserved} id={id}>Cancel Reservation</button>
+    <button type="submit" className="unreservedButton" onClick={handleUnreserved} id={id}>Cancel Reservation</button>
   ) : (
     <button
       type="button"
@@ -38,6 +38,7 @@ export default function ButtonRocketBadge({ id, reserved }) {
     >
       Reserve Rocket
     </button>
+
   );
 }
 
