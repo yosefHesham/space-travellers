@@ -62,6 +62,7 @@ function Rockets({ id, reserved }) {
                 reserved ? (
                   <span>
                     <p>reserved</p>
+                    {rocket.description}
                   </span>
                 ) : (
                   <p style={{ margin: '0' }}>{rocket.description}</p>
