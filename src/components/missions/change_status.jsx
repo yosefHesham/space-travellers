@@ -1,7 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { changeMissionStats } from "../../redux/missions/missions";
 
 const ChangeStatus = (props) => {
-  const { handleStatus, text, color } = props;
+  const {id, text, color } = props;
+  const dispatch = useDispatch()
+  const handleChange = () => {
+     dispatch( changeMissionStats(id))
+  }
 
   return (
     <div
@@ -13,7 +19,7 @@ const ChangeStatus = (props) => {
     >
       <button
         type="button"
-        onClick={handleStatus}
+        onClick={handleChange}
         style={{
           padding: "5px",
           boxShadow: "none",
@@ -24,6 +30,7 @@ const ChangeStatus = (props) => {
           padding:"8px",
           borderRadius:"5px"
         }}
+        
       >
         {text}
       </button>

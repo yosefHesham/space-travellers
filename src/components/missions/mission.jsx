@@ -5,7 +5,7 @@ import styles from "./mission.module.css";
 import StatusBadge from "./status_badge";
 
 const Mission = (props) => {
-  const { name, description, reserved, bgColor } = props;
+  const { id,name, description, reserved, bgColor } = props;
 
   return (
     <div className={styles.mission} style={{ backgroundColor: bgColor }}>
@@ -18,7 +18,7 @@ const Mission = (props) => {
           <ChangeStatus
             text={"Leave Mission"}
             color={"red"}
-            handleStatus={() => {}}
+            id={id}
           ></ChangeStatus>{" "}
         </>
       ) : (
@@ -28,7 +28,8 @@ const Mission = (props) => {
           <ChangeStatus
             text={"Join Mission"}
             color={"rgba(0,0,0,.7)"}
-            handleStatus={() => {}}
+            id={id}
+
           ></ChangeStatus>{" "}
         </>
       )}
