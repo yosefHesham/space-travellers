@@ -15,14 +15,14 @@ export const getRockets = () => async (dispatch) => {
     );
 };
 
-export const reserveRocket = (id) => async (dispatch) => {
+export const reserveRocket = (id) => (dispatch) => {
   dispatch({
     type: RESERVE_ROCKET,
     payload: id,
   });
 };
 
-export const unreserveRocket = (id) => async (dispatch) => {
+export const unreserveRocket = (id) => (dispatch) => {
   dispatch({
     type: UNRESERVE_ROCKET,
     payload: id,

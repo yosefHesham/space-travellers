@@ -43,19 +43,24 @@ function Rockets({ id, reserved }) {
             }}
           >
             <h2 style={{ padding: '0' }}>{rocket.rocket_name}</h2>
-            <span style={{ padding: '0' }}>
+            <span style={{
+              height: '150px',
+              padding: '0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+            >
               {
                 reserved ? (
-                  <p>
-                    <span>
-                      reserved
-                    </span>
-                  </p>
+                  <span>
+                    <p>reserved</p>
+                  </span>
                 ) : (
-                  <p>{rocket.description}</p>
+                  <p style={{ margin: '0' }}>{rocket.description}</p>
                 )
               }
-              <span>
+              <span className="buttonBadgeContainer" style={{ padding: '0' }}>
                 <ButtonRocketBadge id={id} reserved={reserved} />
               </span>
             </span>
