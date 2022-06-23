@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket, unreserveRocket } from '../../redux/rockets/rockets';
 
-function RocketBadge({ reserved, id }) {
+function RocketBadge(props) {
+  const { id, reserved } = props;
   const dispatch = useDispatch();
 
   const handleReserve = (event) => {
