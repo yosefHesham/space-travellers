@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadReservedRockets } from "../../redux/rockets/rockets";
+import { loadReservedRockets } from "../../redux/rockets/reservedRockets";
+loadReservedRockets
 const ReservedRockets = () => {
+
+  const reservedRockets = useSelector((state) => state.reservedRockets);
+  const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
-
-  const reservedRockets = useSelector((state) => state.rockets);
-
   React.useEffect(() => {
-    dispatch(loadReservedRockets());
+    dispatch(loadReservedRockets(rockets))
   }, []);
 
   const reserveMissionContainer = {
