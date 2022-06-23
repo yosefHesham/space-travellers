@@ -6,7 +6,6 @@ import './App.css';
 const App = () => (
 
   <main>
-
     <RouteHandler />
   </main>
 );

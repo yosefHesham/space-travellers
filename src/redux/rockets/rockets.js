@@ -7,11 +7,12 @@ const UNRESERVE_ROCKET = 'UNRESERVE_ROCKET';
 // Action Creators
 
 export const getRockets = () => async (dispatch) => {
-  await fetch(api)
-    .then((rockets) => rockets.json())
-    .then(
-      (data) => dispatch({ type: GET_ROCKETS, payload: data }),
-    );
+  const response = await fetch(api);
+  const data = await response.json();
+  dispatch({
+    type: GET_ROCKETS,
+    payload: data,
+  });
 };
 
 export const reserveRocket = (id) => (dispatch) => {
@@ -28,11 +29,8 @@ export const unreserveRocket = (id) => (dispatch) => {
   });
 };
 
-// Create an initial state
-
-const initialState = [];
-
 // Create reducer
+const initialState = [];
 
 const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -40,12 +38,9 @@ const rocketsReducer = (state = initialState, action) => {
       return action.payload;
     }
     case RESERVE_ROCKET: {
-      return state.map((rocket) => {
-        if (rocket.id === action.payload) {
-          return { ...rocket, reserved: true };
-        }
-        return rocket;
-      });
+      const newState = [...state];
+      newState[action.payload - 1].reserved = true;
+      return newState;
     }
     case UNRESERVE_ROCKET: {
       const newState = [...state];
