@@ -30,7 +30,6 @@ const ChangeStatus = (props) => {
           padding: '8px',
           borderRadius: '5px',
         }}
-
       >
         {text}
       </button>
