@@ -1,30 +1,29 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loadReservedRockets } from "../../redux/rockets/reservedRockets";
-loadReservedRockets
-const ReservedRockets = () => {
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadReservedRockets } from '../../redux/rockets/reservedRockets';
 
+const ReservedRockets = () => {
   const reservedRockets = useSelector((state) => state.reservedRockets);
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(loadReservedRockets(rockets))
+    dispatch(loadReservedRockets(rockets));
   }, []);
 
   const reserveMissionContainer = {
-    margin: "30px auto",
-    display: "flex",
-    flexDirection: "column",
+    margin: '30px auto',
+    display: 'flex',
+    flexDirection: 'column',
   };
   const table = {
-    width: "48%",
-    height: "50px",
-    borderCollapse: "collapse",
-    border: "1px solid #AAAAAA",
+    width: '48%',
+    height: '50px',
+    borderCollapse: 'collapse',
+    border: '1px solid #AAAAAA',
   };
   return (
-    <div  style={reserveMissionContainer}>
-      <span style={{ margin: "20px 0", padding: "0" }}>
+    <div style={reserveMissionContainer}>
+      <span style={{ margin: '20px 0', padding: '0' }}>
         <h1>My Rockets</h1>
       </span>
       <ul>

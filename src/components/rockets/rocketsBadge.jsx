@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket, unreserveRocket } from '../../redux/rockets/rockets';
+import { reserveRocket } from '../../redux/rockets/rockets';
 
 function RocketBadge(props) {
   const { id, reserved } = props;
@@ -10,7 +10,6 @@ function RocketBadge(props) {
   const handleReserve = () => {
     dispatch(reserveRocket(id));
   };
-
 
   const buttonStyle = {
     width: '180px',
