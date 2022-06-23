@@ -30,8 +30,22 @@ function RocketBadge({ reserved, id }) {
     cursor: 'pointer',
   };
 
+  const cancelButton = {
+    width: '180px',
+    height: '40px',
+    background: 'transparent',
+    border: '1px solid #5F5F5F',
+    color: '#5F5F5F',
+    outline: 'none',
+    fontSize: '1rem',
+    padding: '0.3rem',
+    fontWeight: 'bold',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  };
+
   return reserved ? (
-    <button className="handleUnreserved" style={buttonStyle} type="button" onClick={handleUnreserve} id={id}>
+    <button className="handleUnreserved" style={cancelButton} type="button" onClick={handleUnreserve} id={id}>
       Cancel Reservation
     </button>
   ) : (
