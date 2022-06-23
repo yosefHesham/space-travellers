@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket, unreserveRocket } from '../../redux/rockets/rockets';
+import { reserveRocket } from '../../redux/rockets/rockets';
 
 function RocketBadge(props) {
   const { id, reserved } = props;
   const dispatch = useDispatch();
 
-  const handleReserve = (event) => {
-    const { id } = event.target;
+  const handleReserve = () => {
     dispatch(reserveRocket(id));
-  };
-
-  const handleUnreserve = (event) => {
-    const { id } = event.target;
-    dispatch(unreserveRocket(id));
   };
 
   const buttonStyle = {
@@ -46,7 +40,7 @@ function RocketBadge(props) {
   };
 
   return reserved ? (
-    <button className="handleUnreserved" style={cancelButton} type="button" onClick={handleUnreserve} id={id}>
+    <button className="handleUnreserved" style={cancelButton} type="button" onClick={handleReserve} id={id}>
       Cancel Reservation
     </button>
   ) : (

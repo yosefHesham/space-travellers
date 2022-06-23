@@ -6,13 +6,20 @@ const UNRESERVE_ROCKET = 'UNRESERVE_ROCKET';
 
 // Action Creators
 
-export const getRockets = () => async (dispatch) => {
-  const response = await fetch(api);
-  const data = await response.json();
-  dispatch({
-    type: GET_ROCKETS,
-    payload: data,
-  });
+export const getRockets = () => async (dispatch, getState) => {
+  const currentRockets = getState().rockets;
+  if (currentRockets.length === 0) {
+    const response = await fetch(api);
+    const data = await response.json();
+    const rockets = data.map((rocket) => ({
+      ...rocket,
+      reserved: false,
+    }));
+    dispatch({
+      type: GET_ROCKETS,
+      payload: rockets,
+    });
+  }
 };
 
 export const reserveRocket = (id) => (dispatch) => {
@@ -38,17 +45,20 @@ const rocketsReducer = (state = initialState, action) => {
       return action.payload;
     }
     case RESERVE_ROCKET: {
-      const newState = [...state];
-      newState[action.payload - 1].reserved = true;
-      return newState;
+      return state.map((rocket) => {
+        if (rocket.id === action.payload) {
+          return {
+            ...rocket,
+            reserved: !rocket.reserved,
+          };
+        }
+        return rocket;
+      });
     }
-    case UNRESERVE_ROCKET: {
-      const newState = [...state];
-      newState[action.payload - 1].reserved = false;
-      return newState;
-    }
+
     default:
       return state;
   }
 };
+
 export default rocketsReducer;

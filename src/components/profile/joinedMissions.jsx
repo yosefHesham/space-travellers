@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const Joined = () => {
+const JoinedMissions = () => {
   const missions = useSelector((state) => state.missions);
   const joined = missions.filter((mission) => mission.reserved);
   const reserveMissionContainer = {
@@ -16,7 +16,7 @@ const Joined = () => {
     border: '1px solid #AAAAAA',
   };
   return (
-    <div className="profile_container" style={reserveMissionContainer}>
+    <div style={reserveMissionContainer}>
       <span style={{ margin: '20px 0', padding: '0' }}>
         <h1>My Missions</h1>
       </span>
@@ -34,10 +34,10 @@ const Joined = () => {
             </table>
           ))
         ) : (
-          <p>You have not reserved any rockets </p>
+          <p>You have not reserved any missions </p>
         )}
       </ul>
     </div>
   );
 };
-export default Joined;
+export default JoinedMissions;
