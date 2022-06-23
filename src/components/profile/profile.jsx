@@ -1,6 +1,9 @@
 import React from 'react';
+import Joined from './joinedMissions';
 
-function Profile() {
-  return (<p>Profile</p>);
-}
+const Profile = () => (
+  <div className="profile_container">
+    <Joined />
+  </div>
+);
 export default Profile;

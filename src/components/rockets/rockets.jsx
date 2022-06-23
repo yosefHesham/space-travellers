@@ -21,7 +21,7 @@ function Rockets() {
             images={rocket.flickr_images[0]}
             name={rocket.rocket_name}
             description={rocket.description}
-            reserved={rocket.reserved === true}
+            reserved={rocket.reserved}
           />
         ))}
       </ul>
