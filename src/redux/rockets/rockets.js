@@ -1,18 +1,36 @@
-const api = 'https://api.spacexdata.com/v3/rockets';
+import { act } from "react-dom/test-utils";
 
-const GET_ROCKETS = 'GET_ROCKETS';
-const RESERVE_ROCKET = 'RESERVE_ROCKET';
-const UNRESERVE_ROCKET = 'UNRESERVE_ROCKET';
+const api = "https://api.spacexdata.com/v3/rockets";
+
+const GET_ROCKETS = "GET_ROCKETS";
+const RESERVE_ROCKET = "RESERVE_ROCKET";
+const UNRESERVE_ROCKET = "UNRESERVE_ROCKET";
+const GET_RESERVED_ROCKETS = "GET_RESERVED_ROCKETS";
+
+export const loadReservedRockets = () => {
+  return {
+    type: GET_RESERVED_ROCKETS,
+  };
+};
 
 // Action Creators
 
-export const getRockets = () => async (dispatch) => {
+export const getRockets = () => async (dispatch, getState) => {
+  const currentRockets = getState().rockets;
+  if(currentRockets.length == 0) {
   const response = await fetch(api);
   const data = await response.json();
+  const rockets = data.map(rocket => {
+    return {
+      ...rocket,
+      reserved:false
+    }
+  })
   dispatch({
     type: GET_ROCKETS,
-    payload: data,
+    payload: rockets,
   });
+}
 };
 
 export const reserveRocket = (id) => (dispatch) => {
@@ -38,15 +56,20 @@ const rocketsReducer = (state = initialState, action) => {
       return action.payload;
     }
     case RESERVE_ROCKET: {
-      const newState = [...state];
-      newState[action.payload - 1].reserved = true;
-      return newState;
+     
+      return state.map(rocket => {
+        if(rocket.id == action.payload){
+          return {
+            ...rocket,
+            reserved:!rocket.reserved
+          }
+        }
+        return rocket;
+      });
     }
-    case UNRESERVE_ROCKET: {
-      const newState = [...state];
-      newState[action.payload - 1].reserved = false;
-      return newState;
-    }
+   
+    case GET_RESERVED_ROCKETS:
+      return [...state.filter((rocket) => rocket.reserved)];
     default:
       return state;
   }

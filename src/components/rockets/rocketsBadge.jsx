@@ -7,15 +7,10 @@ function RocketBadge(props) {
   const { id, reserved } = props;
   const dispatch = useDispatch();
 
-  const handleReserve = (event) => {
-    const { id } = event.target;
+  const handleReserve = () => {
     dispatch(reserveRocket(id));
   };
 
-  const handleUnreserve = (event) => {
-    const { id } = event.target;
-    dispatch(unreserveRocket(id));
-  };
 
   const buttonStyle = {
     width: '180px',
@@ -46,7 +41,7 @@ function RocketBadge(props) {
   };
 
   return reserved ? (
-    <button className="handleUnreserved" style={cancelButton} type="button" onClick={handleUnreserve} id={id}>
+    <button className="handleUnreserved" style={cancelButton} type="button" onClick={handleReserve} id={id}>
       Cancel Reservation
     </button>
   ) : (

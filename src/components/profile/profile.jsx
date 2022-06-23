@@ -1,9 +1,13 @@
 import React from 'react';
-import Joined from './joinedMissions';
+import JoinedMissions from './joinedMissions';
+import ReservedRockets from './reservedRockets';
 
-const Profile = () => (
-  <div className="profile_container">
-    <Joined />
+const Profile = () =>  { 
+ 
+ return ( <div className="profile_container" style={{display:"flex"}}>
+    <JoinedMissions  />
+    <ReservedRockets></ReservedRockets>
   </div>
 );
-export default Profile;
+}
+export default Profile
