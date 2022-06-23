@@ -9,7 +9,7 @@ function Rockets() {
   const rockets = useSelector((state) => state.rockets);
 
   useEffect(() => {
-    dispatch(getRockets);
+    dispatch(getRockets());
   }, []);
   return (
     <section style={{ width: '100%', padding: '0' }}>
