@@ -25,15 +25,3 @@ code {
     'Courier New',
     monospace;
 }
-
-.action-button {
-  height: 50px;
-  width: 80%;
-  align-self: center;
-  margin: 0 auto;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}

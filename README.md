@@ -1,53 +1,56 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Space Travellers
+# Project Name
 
-> A project that fetches information from space x about rockets and their missions, allowing user to reserve a rocket.
+> Description the project.
+
 
 ## Built With
 
-- JSX
-- JS
-- React JS
-- Redux
+- Major languages
+- Frameworks
+- Technologies used
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://roaring-jelly-585f87.netlify.app/)
+[Live Demo Link](https://livedemo.com)
 
+
+## Getting Started
+
+**This is an example of how you may give instructions on setting up your project locally.**
+**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-- npm
-- git
-- any code editor, preferly vs code.
 
 ### Setup
-- clone the project `https://github.com/yosefHesham/space-travellers`
 
 ### Install
-- run npm i to install dependencies
 
 ### Usage
-- run `npm start` to start the project.t
-- run `npm run build` to build the  project
+
+### Run tests
+
+### Deployment
+
 
 
 ## Authors
 
-👤 **Yousef Hesham**
+👤 **Author1**
 
-- GitHub: [@yosefHesham](https://github.com/yosefHesham)
-- Twitter: [@yousef](https://twitter.com/Yousef45653478)
-- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/yousef-hesham98/)
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Stanley SIMEON**
+👤 **Author2**
 
-- GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
-- Twitter: [@mstanleyme](https://twitter.com/mstanleyme)
-- LinkedIn: [@stanleysimeon](https://www.linkedin.com/in/stanleysimeon/)
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
