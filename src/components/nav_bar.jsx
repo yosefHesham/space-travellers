@@ -45,10 +45,18 @@ function Navbar() {
       </div>
       <ul className="d-flex links">
         {navLinks.map((link) => (
-          <NavLink key={link.id} to={link.path} style={{ textDecoration: 'none', fontWeight: 'bold', color: '#135DCD' }}>
-            {' '}
-            {link.text}
-          </NavLink>
+          <li
+            key={link.id}
+            style={{
+              fontWeight: 'bold',
+              listStyle: 'none',
+            }}
+          >
+            <NavLink to={link.path}>
+              {' '}
+              {link.text}
+            </NavLink>
+          </li>
         ))}
       </ul>
     </header>

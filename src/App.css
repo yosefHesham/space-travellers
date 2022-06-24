@@ -18,14 +18,35 @@
   }
 
   .links {
-    width: 60%;
+    width: 40%;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .links a {
-    font-size: 1rem;
+  .links li,
+  a {
+    padding: 0;
+    text-decoration: none;
   }
+}
+
+.links {
+  width: 25%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links li,
+a {
+  padding: 0;
+  text-decoration: none;
+  color:#135DCD;
+}
+
+.links a:focus {
+  border-bottom: 2px solid grey;
 }
