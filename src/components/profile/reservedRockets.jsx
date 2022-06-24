@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadReservedRockets } from '../../redux/rockets/reservedRockets';
+import TableData from './table_data';
 
 const ReservedRockets = () => {
   const reservedRockets = useSelector((state) => state.reservedRockets);
@@ -28,17 +29,16 @@ const ReservedRockets = () => {
       </span>
       <ul>
         {reservedRockets.length > 0 ? (
-          reservedRockets.map((rocket) => (
-            <table border={1} style={table} key={rocket.rocket_id}>
-              <tbody>
-                <tr>
-                  <td>
-                    <p>{rocket.rocket_name}</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          ))
+          <table border={1} style={table}>
+            <tbody>
+              {reservedRockets.map((rocket) => (
+                <TableData
+                  key={rocket.id}
+                  name={rocket.rocket_name}
+                />
+              ))}
+            </tbody>
+          </table>
         ) : (
           <p>You have not reserved any rockets </p>
         )}
