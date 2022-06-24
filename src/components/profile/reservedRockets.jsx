@@ -17,7 +17,7 @@ const ReservedRockets = () => {
     flexDirection: 'column',
   };
   const table = {
-    width: '48%',
+    width: '100%',
     height: '50px',
     borderCollapse: 'collapse',
     border: '1px solid #AAAAAA',

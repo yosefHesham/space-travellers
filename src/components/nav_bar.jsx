@@ -16,7 +16,7 @@ const navLinks = [
 function Navbar() {
   return (
     <header
-      className="d-flex"
+      className="d-flex queries-header"
       style={{
         height: '15%',
         padding: '20px 0',
@@ -41,14 +41,22 @@ function Navbar() {
           style={{ width: '60px', height: '60px' }}
           alt="logo"
         />
-        <h1>Space Travelers&apos; Hub</h1>
+        <h1 className="title">Space Travelers&apos; Hub</h1>
       </div>
-      <ul className="d-flex">
+      <ul className="d-flex links">
         {navLinks.map((link) => (
-          <NavLink key={link.id} to={link.path} style={{ textDecoration: 'none', fontWeight: 'bold', color: '#135DCD' }}>
-            {' '}
-            {link.text}
-          </NavLink>
+          <li
+            key={link.id}
+            style={{
+              fontWeight: 'bold',
+              listStyle: 'none',
+            }}
+          >
+            <NavLink to={link.path}>
+              {' '}
+              {link.text}
+            </NavLink>
+          </li>
         ))}
       </ul>
     </header>

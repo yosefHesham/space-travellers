@@ -2,3 +2,51 @@
   margin: 0;
   padding: 0 30px;
 }
+
+@media (max-width: 1179px) {
+  .queries-header {
+    width: 100%;
+    display: flex;
+  }
+
+  .logo {
+    width: 40%;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .links {
+    width: 40%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links li,
+  a {
+    padding: 0;
+    text-decoration: none;
+  }
+}
+
+.links {
+  width: 25%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links li,
+a {
+  padding: 0;
+  text-decoration: none;
+  color: #135dcd;
+}
+
+.links a:focus {
+  border-bottom: 2px solid grey;
+}
