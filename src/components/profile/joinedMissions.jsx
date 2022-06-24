@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import TableData from './table_data';
 
 const JoinedMissions = () => {
   const missions = useSelector((state) => state.missions);
@@ -22,17 +23,16 @@ const JoinedMissions = () => {
       </span>
       <ul>
         {joined.length > 0 ? (
-          joined.map((mission) => (
-            <table border={1} style={table} key={mission.mission_id}>
-              <tbody>
-                <tr>
-                  <td>
-                    <p>{mission.mission_name}</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          ))
+          <table border={1} style={table}>
+            <tbody>
+              {joined.map((mission) => (
+                <TableData
+                  key={mission.mission_id}
+                  name={mission.mission_name}
+                />
+              ))}
+            </tbody>
+          </table>
         ) : (
           <p>You have not reserved any missions </p>
         )}

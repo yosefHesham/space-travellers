@@ -1,56 +1,53 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Space Travellers
 
-> Description the project.
-
+> A project that fetches information from space x about rockets and their missions, allowing user to reserve a rocket.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JSX
+- JS
+- React JS
+- Redux
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://roaring-jelly-585f87.netlify.app/)
 
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- npm
+- git
+- any code editor, preferly vs code.
 
 ### Setup
+- clone the project `https://github.com/yosefHesham/space-travellers`
 
 ### Install
+- run npm i to install dependencies
 
 ### Usage
-
-### Run tests
-
-### Deployment
-
+- run `npm start` to start the project.t
+- run `npm run build` to build the  project
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Yousef Hesham**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@yosefHesham](https://github.com/yosefHesham)
+- Twitter: [@yousef](https://twitter.com/Yousef45653478)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yousef-hesham98/)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
+- Twitter: [mstanleyme](https://twitter.com/mstanleyme)
+- LinkedIn: [stanleysimeon](https://www.linkedin.com/in/stanleysimeon/)
 
 ## 🤝 Contributing
 

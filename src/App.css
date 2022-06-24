@@ -2,3 +2,30 @@
   margin: 0;
   padding: 0 30px;
 }
+
+@media (max-width: 1179px) {
+  .queries-header {
+    width: 100%;
+    display: flex;
+  }
+
+  .logo {
+    width: 40%;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .links {
+    width: 60%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .links a {
+    font-size: 1rem;
+  }
+}
