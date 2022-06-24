@@ -6,7 +6,7 @@ const CHANGE_MISSION_STATUS = 'CHANGE_MISSION_STATUS';
 
 // action creators
 
-const loadMissions = (missions) => ({
+export const loadMissions = (missions) => ({
   type: LOAD_MISSONS,
   missions,
 });
