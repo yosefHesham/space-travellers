@@ -41,13 +41,13 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@yosefHesham](https://github.com/yosefHesham)
 - Twitter: [@yousef](https://twitter.com/Yousef45653478)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yousef-hesham98/)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/yousef-hesham98/)
 
-👤 **Author2**
+👤 **Stanley SIMEON**
 
 - GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
-- Twitter: [mstanleyme](https://twitter.com/mstanleyme)
-- LinkedIn: [stanleysimeon](https://www.linkedin.com/in/stanleysimeon/)
+- Twitter: [@mstanleyme](https://twitter.com/mstanleyme)
+- LinkedIn: [@stanleysimeon](https://www.linkedin.com/in/stanleysimeon/)
 
 ## 🤝 Contributing
 
