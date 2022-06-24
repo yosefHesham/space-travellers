@@ -33,14 +33,13 @@ function Navbar() {
       <div
         className="logo d-flex"
         style={{
-          padding: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          padding: '0',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <img
-          src={logo}
-          style={{ width: '60px', height: '60px' }}
-          alt="logo"
-        />
+        <img src={logo} style={{ width: '60px', height: '60px' }} alt="logo" />
         <h1 className="title">Space Travelers&apos; Hub</h1>
       </div>
       <ul className="d-flex links">
@@ -52,7 +51,10 @@ function Navbar() {
               listStyle: 'none',
             }}
           >
-            <NavLink to={link.path}>
+            <NavLink
+              to={link.path}
+              className={({ isActive }) => isActive && 'links-active'}
+            >
               {' '}
               {link.text}
             </NavLink>
