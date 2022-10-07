@@ -12,7 +12,7 @@ function Rockets() {
     dispatch(getRockets());
   }, []);
   return (
-    <section style={{ width: '100%', padding: '0' }}>
+    <section className="md:px-24 px-2 md:pt-24 pt-16">
       <ul style={{ width: '100%', padding: '0' }}>
         {rockets.map((rocket) => (
           <GetRockets

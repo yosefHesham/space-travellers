@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for components Missions page should render properly 1`] = `
+<section
+  className="missions"
+>
+  <div
+    className="mission"
+  >
+    <p
+      className="right_border"
+    >
+      Mission
+    </p>
+    <p
+      className="right_border"
+    >
+      Description
+    </p>
+    <p
+      className="right_border"
+    >
+      Status
+    </p>
+    <p>
+       
+    </p>
+  </div>
+</section>
+`;
+
+exports[`Test for components Profile page should render correctly 1`] = `
+<div
+  className="profile_container"
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "space-between",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "margin": "30px auto",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "margin": "20px 0",
+          "padding": "0",
+        }
+      }
+    >
+      <h1>
+        My Missions
+      </h1>
+    </span>
+    <ul>
+      <p>
+        You have not reserved any missions 
+      </p>
+    </ul>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "margin": "30px auto",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "margin": "20px 0",
+          "padding": "0",
+        }
+      }
+    >
+      <h1>
+        My Rockets
+      </h1>
+    </span>
+    <ul>
+      <p>
+        You have not reserved any rockets 
+      </p>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Test for components ReservedRockets should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "margin": "30px auto",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "margin": "20px 0",
+        "padding": "0",
+      }
+    }
+  >
+    <h1>
+      My Rockets
+    </h1>
+  </span>
+  <ul>
+    <p>
+      You have not reserved any rockets 
+    </p>
+  </ul>
+</div>
+`;
+
+exports[`Test for components joinedMissions  should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "margin": "30px auto",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "margin": "20px 0",
+        "padding": "0",
+      }
+    }
+  >
+    <h1>
+      My Missions
+    </h1>
+  </span>
+  <ul>
+    <p>
+      You have not reserved any missions 
+    </p>
+  </ul>
+</div>
+`;
+
+exports[`Test for components rocket page should render properly 1`] = `
+<section
+  style={
+    Object {
+      "padding": "0",
+      "width": "100%",
+    }
+  }
+>
+  <ul
+    style={
+      Object {
+        "padding": "0",
+        "width": "100%",
+      }
+    }
+  />
+</section>
+`;

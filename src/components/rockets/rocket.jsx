@@ -5,68 +5,34 @@ import RocketBadge from './rocketsBadge';
 const badgeStyle = {
   background: '#00B2CE',
   color: '#ffffff',
-  padding: '0.2rem',
-  fontWeight: 'bold',
-  borderRadius: '5px',
-  margin: '10px auto',
 };
-
-const listStyle = {
-  width: '100%',
-  height: '250px',
-  margin: '50px 0',
-  padding: '0',
-  gap: '10px',
-  display: 'flex',
-  justifyContent: 'space-between',
-  listStyle: 'none',
-};
-
-const cardInfo = {
-  maxHeight: '100%',
-  minHeight: '200px',
-  height: '230px',
-  width: '100%',
-  padding: '10px',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'start',
-  gap: '20px',
-  backdropFilter: 'blur(20px)',
-  backgroundColor: '#008CFF0E',
-  borderRadius: '5px',
-};
-
-const nameStyle = { fontSize: '1.5rem', fontWeight: 'bold', padding: '0' };
 
 const GetRockets = ({
   id, images, name, description, reserved,
 }) => (
   <li
-    style={listStyle}
+    className="card m-auto shadow-md rounded-md p-2 md:mt-10 md:flex gap-5 mb-6"
   >
-    <img alt={name} src={images} style={{ width: '25%', height: '100%', padding: '0' }} />
-    <div
-      style={cardInfo}
-    >
-      <h2 style={nameStyle}>{name}</h2>
-      <div style={{ padding: '0', lineHeight: '25px' }}>
+    <img alt={name} src={images} className="w-full md:w-3/12" />
+    <div>
+      <h2 className="font-bold md:text-2xl md:mb-2 my-2 text-xl">{name}</h2>
+      <div className="p-0 text-sm md:text-xl">
         {reserved ? (
           <div style={{ margin: '0', padding: '0', lineHeight: '25px' }}>
             <p>
               <span
                 style={badgeStyle}
+                className="p-1 rounded-sm md:rounded-md md:font-normal m-0"
               >
                 reserved
               </span>
               {' '}
-              {description}
+              <span className="text-grayDark md:text-xl text-sm mb-4">{description}</span>
               {' '}
             </p>
           </div>
         ) : (
-          <p>{description}</p>
-
+          <p className="text-grayDark md:text-xl text-sm mb-4">{description}</p>
         )}
       </div>
       <RocketBadge id={id} reserved={reserved} />

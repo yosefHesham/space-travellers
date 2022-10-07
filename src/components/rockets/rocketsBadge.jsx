@@ -11,40 +11,12 @@ function RocketBadge(props) {
     dispatch(reserveRocket(id));
   };
 
-  const buttonStyle = {
-    width: '180px',
-    height: '40px',
-    background: '#0068E8',
-    border: 'none',
-    outline: 'none',
-    color: '#ffffff',
-    fontSize: '1rem',
-    padding: '0.3rem',
-    fontWeight: 'bold',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  };
-
-  const cancelButton = {
-    width: '180px',
-    height: '40px',
-    background: 'transparent',
-    border: '1px solid #5F5F5F',
-    color: '#5F5F5F',
-    outline: 'none',
-    fontSize: '1rem',
-    padding: '0.3rem',
-    fontWeight: 'bold',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  };
-
   return reserved ? (
-    <button className="handleUnreserved" style={cancelButton} type="button" onClick={handleReserve} id={id}>
+    <button className="py-1 md:py-2 md:px-4 px-2 mt-2 md:mt-4 rounded-sm text-md md:text-xl text-grayDark font-normal md:rounded-md text-center bg-transparent border" type="button" onClick={handleReserve} id={id}>
       Cancel Reservation
     </button>
   ) : (
-    <button className="reserveBtn" type="button" style={buttonStyle} onClick={handleReserve} id={id}>
+    <button className="py-1 md:py-2 md:px-4 px-2 rounded-sm text-md md:text-xl text-white font-normal md:rounded-md text-center bg-blue" type="button" onClick={handleReserve} id={id}>
       Reserve Rocket
     </button>
   );

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../images/planet.png';
+import planet from '../images/planet1.png';
 
 const navLinks = [
   {
@@ -7,53 +7,26 @@ const navLinks = [
     id: 1,
     text: 'Rockets',
   },
-
   { path: '/missions', id: 2, text: 'Missions' },
-
   { path: '/profile', id: 3, text: 'Profile' },
 ];
 
 function Navbar() {
   return (
-    <header
-      className="d-flex queries-header"
-      style={{
-        height: '15%',
-        padding: '20px 0',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderBottom: '1px solid #7A7A7A',
-        position: 'sticky',
-        top: '0',
-        zIndex: '999999',
-        backdropFilter: 'blur(20px)',
-      }}
-    >
-      <div
-        className="logo d-flex"
-        style={{
-          padding: '0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <img src={logo} style={{ width: '60px', height: '60px' }} alt="logo" />
-        <h1 className="title">Space Travelers&apos; Hub</h1>
+    <header className="flex w-full justify-between items-center p-3 md:py-4 md:px-24 bg-black fixed top-0 z-10">
+      <div className="md:flex md:items-center md:gap-8">
+        <img src={planet} alt="logo" className="w-6 h-6 md:h-14 md:w-14" />
+        <h1 className="hidden md:inline md:text-3xl text-white">Space Travelers&apos; Hub</h1>
       </div>
-      <ul className="d-flex links">
+      <ul className="flex gap-4 md:gap-24 text-white font-light md:font-normal">
         {navLinks.map((link) => (
           <li
             key={link.id}
-            style={{
-              fontWeight: 'bold',
-              listStyle: 'none',
-            }}
+            className="border-b border-transparent hover:border-white"
           >
             <NavLink
               to={link.path}
-              className={({ isActive }) => isActive && 'links-active'}
+              className={({ isActive }) => isActive && 'border-white'}
             >
               {' '}
               {link.text}
