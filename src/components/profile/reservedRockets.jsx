@@ -11,36 +11,22 @@ const ReservedRockets = () => {
     dispatch(loadReservedRockets(rockets));
   }, []);
 
-  const reserveMissionContainer = {
-    margin: '30px auto',
-    display: 'flex',
-    flexDirection: 'column',
-  };
-  const table = {
-    width: '100%',
-    height: '50px',
-    borderCollapse: 'collapse',
-    border: '1px solid #AAAAAA',
-  };
   return (
-    <div style={reserveMissionContainer}>
-      <span style={{ margin: '20px 0', padding: '0' }}>
-        <h1>My Rockets</h1>
-      </span>
+    <div className="w-6/12">
       <ul>
         {reservedRockets.length > 0 ? (
-          <table border={1} style={table}>
-            <tbody>
-              {reservedRockets.map((rocket) => (
+          <table className="w-full border-0">
+            <th className="border-b border-mySpend text-center text-md md:text-xl">My Rockets</th>
+            {reservedRockets.map((rocket) => (
+              <tr key={rocket.id} className="odd:bg-white even:bg-slate-100 h-auto text-sm md:text-xl">
                 <TableData
-                  key={rocket.id}
                   name={rocket.rocket_name}
                 />
-              ))}
-            </tbody>
+              </tr>
+            ))}
           </table>
         ) : (
-          <p>You have not reserved any rockets </p>
+          <p className="text-center text-warning">You have not reserved any rockets!!! </p>
         )}
       </ul>
     </div>

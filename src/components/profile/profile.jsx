@@ -2,14 +2,8 @@ import React from 'react';
 import JoinedMissions from './joinedMissions';
 import ReservedRockets from './reservedRockets';
 
-const profileStyle = {
-  width: '100%',
-  display: 'flex',
-  justifyContent: 'space-between',
-};
-
 const Profile = () => (
-  <div className="profile_container" style={profileStyle}>
+  <div className="container-fluid px-2 md:px-24 py-20 md:py-32 h-screen flex justify-between gap-2">
     <JoinedMissions />
     <ReservedRockets />
   </div>
