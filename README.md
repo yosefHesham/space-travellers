@@ -11,7 +11,7 @@
 - React JS
 - Redux
 
-## Live Demo (if available)
+## Live Demo
 
 [Live Demo Link](https://roaring-jelly-585f87.netlify.app/)
 
